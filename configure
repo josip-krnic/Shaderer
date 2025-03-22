@@ -1,0 +1,11 @@
+#!/bin/bash
+
+mkdir ./temp/ ./libs/ ./build/
+
+wget https://github.com/glfw/glfw/releases/download/3.4/glfw-3.4.zip
+unzip glfw-3.4.zip -d ./temp/
+
+cmake -S ./temp/glfw-3.4/ -B ./temp/glfw-3.4/build/
+cmake --build ./temp/glfw-3.4/build/
+
+cp ./temp/glfw-3.4/build/src/libglfw3.a ./libs/
